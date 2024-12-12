@@ -1,0 +1,186 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', 'Valken', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #e9e5ee;
+}
+
+header, footer {
+    width: 100%;
+    padding: 1rem;
+    background-color: #2c2c2e;
+    color: #fff;
+    text-align: center;
+}
+
+footer {
+    margin-top: auto;
+}
+
+footer p {
+    color: #fff;
+}
+
+main {
+    padding: 1rem;
+    text-align: center;
+    flex: 1;
+}
+
+h1, p {
+    color: #333;
+}
+
+.chepek {
+    font-family: 'Valken';
+    color: #fff;
+    -webkit-text-stroke: .5px #5a26cf;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    background-color: #5a26cf;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 400;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+}
+
+.button:hover {
+    background-color: #4521a3;
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #301476;
+    transform: scale(0.95);
+}
+
+/* Memory Game Specific Styles */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    transform-style: preserve-3d; /* Allow 3D transforms */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix text flip issue */
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Hide backface of the card when flipped */
+.card .front, .card .back {
+    backface-visibility: hidden; /* Prevent text from being flipped */
+}
+
+/* Prevent back face from rotating */
+.card .back {
+    transform: rotateY(180deg); /* Make sure the back face is always facing the user */
+}
+
+.card.matched {
+    background-color: #a4e8a4;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card:active {
+    transform: scale(0.95);
+}
+
+/* Front and Back Faces of Cards */
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Ensure the back face is hidden when flipped */
+}
+
+.card .back {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .front {
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal h2 {
+    color: #2c2c2e;
+}
+
+#closeModalBtn {
+    background-color: #5a26cf;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#closeModalBtn:hover {
+    background-color: #4521a3;
+}
