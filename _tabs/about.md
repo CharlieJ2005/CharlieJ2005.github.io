@@ -6,7 +6,7 @@ order: 4
 
 # Hi, I'm **Charlie Johnston**!
 
-> _First-year Bachelor Computer Science and Engineering student at Eindhoven University of Technology._
+> _First-year Bachelor Computer Science and Engineering student at the Eindhoven University of Technology._
 
 ---
 
