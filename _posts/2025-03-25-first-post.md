@@ -1,6 +1,6 @@
 ---
 pin: false
-title: Welcome to My Blog
+title: Welcome to My Portfolio
 date: 2025-03-25 12:30:00 +/-01000
 categories: [Web Development]
 tags: [web development, personal]     # TAG names should always be lowercase
